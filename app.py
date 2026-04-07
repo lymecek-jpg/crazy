@@ -82,11 +82,12 @@ with st.expander(f"All scanned crypto markets ({len(markets)})"):
         rows = []
         for m in markets:
             spot = spots.get(m["symbol"], 0)
+            threshold = m.get("threshold")
             rows.append({
                 "Question": m["question"][:60],
                 "Asset": m["asset"],
                 "Direction": m["direction"],
-                "Threshold": m.get("threshold", "—"),
+                "Threshold": f"${threshold:,.0f}" if threshold else "—",
                 "Spot": f"${spot:,.0f}" if spot else "—",
                 "Days": f"{m['days_left']:.1f}",
                 "Yes %": f"{m['yes_price']*100:.0f}",
