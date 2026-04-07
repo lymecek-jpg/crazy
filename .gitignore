@@ -1,0 +1,11 @@
+.env
+state.json
+bot.log
+__pycache__/
+*.pyc
+venv/
+.venv/
+.claude/
+idk.txt
+*.key
+*.secret
